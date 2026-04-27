@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dnd5ag6kvuama"]
+
+[ext_resource type="Script" uid="uid://7ncxvplvy1hl" path="res://Main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://olxq2oamq5h1" path="res://xr_origin.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ds0fswni4jj78" path="res://BackroomsLevel1.tscn" id="3_h2yge"]
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+
+[node name="Main" type="Node3D" unique_id=1459283778]
+script = ExtResource("1_0xm2m")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1781791443]
+environment = SubResource("Environment_h2yge")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1304951155]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+
+[node name="XROrigin3D" parent="." unique_id=1152329819 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.395089, 0.28385317, -0.7866249)
+
+[node name="Node3D" parent="." unique_id=1474518060 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.23773444, 0)

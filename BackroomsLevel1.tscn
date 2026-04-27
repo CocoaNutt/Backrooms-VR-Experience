@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ds0fswni4jj78"]
+
+[ext_resource type="PackedScene" uid="uid://b5svqwcm0f2ii" path="res://Sketchfab_2022_03_30_23_10_53.blend" id="1_yyysm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vsw7p"]
+size = Vector3(291.9249, 1.512207, 219.99591)
+
+[node name="Node3D" type="Node3D" unique_id=1474518060]
+
+[node name="Sketchfab_2022_03_30_23_10_53" parent="." unique_id=505622160 instance=ExtResource("1_yyysm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26095235, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1808679903]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=85431031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.973774, -0.4941628, 21.273468)
+shape = SubResource("BoxShape3D_vsw7p")
