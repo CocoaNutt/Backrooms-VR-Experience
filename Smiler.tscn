@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://qdvcyhxl8ulq"]
+
+[ext_resource type="Texture2D" uid="uid://ot1ug700qd2t" path="res://textures/Smiler.png" id="1_55sus"]
+[ext_resource type="Script" uid="uid://babnf32ari10t" path="res://Smiler.cs" id="1_ykinl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ykinl"]
+radius = 16.416826
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7o0n5"]
+radius = 1.7150815
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wwoot"]
+
+[node name="Node3D" type="CharacterBody3D" unique_id=114576243 node_paths=PackedStringArray("nav")]
+script = ExtResource("1_ykinl")
+nav = NodePath("NavigationAgent3D")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=54811935]
+transform = Transform3D(0.23577905, 0, 0, 0, 0.23577905, 0, 0, 0, 0.23577905, 0, 0.35199344, 0)
+billboard = 1
+texture = ExtResource("1_55sus")
+
+[node name="AggroRange" type="Area3D" parent="." unique_id=213410878]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AggroRange" unique_id=1655716676]
+shape = SubResource("SphereShape3D_ykinl")
+
+[node name="KillRange" type="Area3D" parent="." unique_id=1493837578]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillRange" unique_id=1174070479]
+shape = SubResource("SphereShape3D_7o0n5")
+
+[node name="Body" type="CollisionShape3D" parent="." unique_id=1930217508]
+shape = SubResource("CapsuleShape3D_wwoot")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1160897659]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=15715012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78339446, 0, 2.2847512)

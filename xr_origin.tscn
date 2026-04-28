@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_v0u4l"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_3hom5"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_fnnc4"]
-[ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="5_3hom5"]
 
-[node name="XROrigin3D" type="XROrigin3D" unique_id=1152329819]
+[node name="XROrigin3D" type="XROrigin3D" unique_id=1152329819 groups=["Player"]]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=472064468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01937595, 0)
@@ -30,9 +29,4 @@ tracker = &"right_hand"
 [node name="MovementTurn" parent="RightHand" unique_id=999800810 instance=ExtResource("4_3hom5")]
 step_turn_angle = 35.0
 
-[node name="PlayerBody" type="CharacterBody3D" parent="." unique_id=1496932216 groups=["player_body"] instance=ExtResource("4_fnnc4")]
-process_priority = -100
-process_physics_priority = -100
-collision_layer = 524288
-collision_mask = 1023
-script = ExtResource("5_3hom5")
+[node name="PlayerBody" parent="." unique_id=1496932216 instance=ExtResource("4_fnnc4")]

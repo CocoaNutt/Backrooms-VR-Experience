@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v4kny5kw5grq"
-path.s3tc="res://.godot/imported/SkirtingBaked.png-cfa818ffbb5e183fc372fb14181bf078.s3tc.ctex"
+uid="uid://ot1ug700qd2t"
+path.s3tc="res://.godot/imported/Smiler.png-5416fbb10dd6dce9f03934c84acd14f4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/SkirtingBaked.png"
-dest_files=["res://.godot/imported/SkirtingBaked.png-cfa818ffbb5e183fc372fb14181bf078.s3tc.ctex"]
+source_file="res://textures/Smiler.png"
+dest_files=["res://.godot/imported/Smiler.png-5416fbb10dd6dce9f03934c84acd14f4.s3tc.ctex"]
 
 [params]
 
