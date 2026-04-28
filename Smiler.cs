@@ -7,93 +7,74 @@ public partial class Smiler : CharacterBody3D
     [Export] public float speed;
     [Export] public float chase; 
     [Export] public NavigationAgent3D nav;
-    public CharacterBody3D player;
+    public Node3D player;
     public Random rand = new Random();
     private bool inChase = false;
-    public int attackCooldown = 0;
 
     public override void _Ready()
     {
         base._Ready();
 
         nav.MaxSpeed = 5.0f;
+        FindPlayer();
         newDest();
+    }
+
+    public void FindPlayer()
+    {
+         var players = GetTree().GetNodesInGroup("Player");
+        foreach (Node n in players)
+        {
+            if (n is Node3D node3d)
+            {
+                player = node3d;
+                break;
+            }
+        }
     }
 
     public override void _Process(double delta)
     {
+        //GD.Print("Process");
         base._Process(delta);
-            try
+
+        if (player != null)
+        {
+
+            float distToPlayer = GlobalPosition.DistanceTo(player.GlobalPosition);
+
+            if (distToPlayer <= chase)
             {
+                nav.TargetPosition = player.GlobalPosition;
+                GD.Print("Pursuing player");
+            }
+            else if (nav.DistanceToTarget() < 2)
+            {
+                newDest();
+            }
+        }
 
-                var Players = GetTree().GetNodesInGroup("Player");
-                CharacterBody3D closestPlayer = null;
-                float closestDist = float.MaxValue;
+        Vector3 nextPos = nav.GetNextPathPosition(); //Update path position
+        //GD.Print("Next point: " + nav.GetNextPathPosition());
+        Vector3 dir = (nextPos - GlobalPosition).Normalized(); //Get direction
+        //GD.Print("Direction: " + dir);
 
-                foreach(Node p in Players)
-                {
-                    /*Player body = p as Player;
-                    if (body == null) continue;
 
-                    float dist = GlobalPosition.DistanceTo(body.GlobalPosition);
+        if (dir.Length() > 0.75f)
+        {
+        }
+        else
+        {
+            dir = Vector3.Zero;
+        }
 
-                    if (dist < closestDist && !body.isDying)
-                    {
-                        closestDist = dist;
-                        closestPlayer = body;
-                    }*/
-                }
-
-                player = closestPlayer;
-
-                float distToPlayer = GlobalPosition.DistanceTo(player.GlobalPosition);
-                if (distToPlayer <= chase) //If distance from player/enemy less than chase dist
-                {
-                    if (!inChase)
-                    {
-                        inChase = true;
-                    }
-                    nav.TargetPosition = player.GlobalPosition; //Follows player
-                }
-                else
-                {
-                    if (inChase)
-                    {
-                        inChase = false;
-                    }
-                    if (nav.DistanceToTarget()<2)
-                    {
-                        newDest();
-                    }
-                }
+        Velocity = speed * dir;
+        //GD.Print("Before MoveAndSlide: " + GlobalPosition);
+        //GD.Print("Current speed: " + speed);
+        //GD.Print("Current direction: " + dir);
+        MoveAndSlide();
+        //GD.Print("After MoveAndSlide: " + GlobalPosition);
             
-                Vector3 nextPos = nav.GetNextPathPosition(); //Update path position
-                //GD.Print("Next point: " + nav.GetNextPathPosition());
-                Vector3 dir = (nextPos - GlobalPosition).Normalized(); //Get direction
-                //GD.Print("Direction: " + dir);
-
-
-                if (dir.Length() > 0.75f)
-                {
-                }
-                else
-                {
-                    dir = Vector3.Zero;
-                }
-
-                Velocity = speed * dir;
-                //GD.Print("Before MoveAndSlide: " + GlobalPosition);
-                if(Velocity.Length() > .1f)
-                {
-                    //animPlayer.Play("RUN");
-                }
-                MoveAndSlide();
-                //GD.Print("After MoveAndSlide: " + GlobalPosition);
-            }
-            catch(Exception e)
-            {
-                GD.Print("Exception: " + e);
-            }
             
         
         

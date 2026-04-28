@@ -23,7 +23,11 @@ environment = SubResource("Environment_h2yge")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1304951155]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 
-[node name="XROrigin3D" parent="." unique_id=1152329819 instance=ExtResource("2_h2yge")]
+[node name="Smiler" parent="." unique_id=114576243 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.14343, 0.867363, 0.7184957)
+chase = 10.0
+
+[node name="Player" parent="." unique_id=1152329819 instance=ExtResource("2_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.395089, 0.28385317, -0.7866249)
 
 [node name="Node3D" parent="." unique_id=1474518060 instance=ExtResource("3_h2yge")]
@@ -38,9 +42,6 @@ navigation_mesh = SubResource("NavigationMesh_lquwl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18171692, -0.09301758, -0.030548096)
 shape = SubResource("BoxShape3D_7mycd")
 
-[node name="Smiler" parent="." unique_id=114576243 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5196669, 0.867363, 0.94271123)
-
 [node name="PatrolPoints" type="Node3D" parent="." unique_id=410787477]
 
 [node name="Marker3D" type="Marker3D" parent="PatrolPoints" unique_id=626575451 groups=["PatrolPoints"]]
@@ -48,6 +49,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0596995)
 
 [node name="Marker3D2" type="Marker3D" parent="PatrolPoints" unique_id=356715177 groups=["PatrolPoints"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.291176)
+
+[node name="Marker3D8" type="Marker3D" parent="PatrolPoints" unique_id=394301103 groups=["PatrolPoints"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.298931, 0, 2.2125015)
+
+[node name="Marker3D5" type="Marker3D" parent="PatrolPoints" unique_id=1372622633 groups=["PatrolPoints"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9474425, 0, -9.527327)
+
+[node name="Marker3D6" type="Marker3D" parent="PatrolPoints" unique_id=67458651 groups=["PatrolPoints"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.161313, -2.3841858e-07, 4.8077326)
+
+[node name="Marker3D7" type="Marker3D" parent="PatrolPoints" unique_id=1677662992 groups=["PatrolPoints"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.963532, -2.3841858e-07, 8.531739)
 
 [node name="Marker3D3" type="Marker3D" parent="PatrolPoints" unique_id=594862214 groups=["PatrolPoints"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5497546, 0, -5.291176)

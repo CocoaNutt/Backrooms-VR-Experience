@@ -13,6 +13,8 @@ radius = 1.7150815
 
 [node name="Node3D" type="CharacterBody3D" unique_id=114576243 node_paths=PackedStringArray("nav")]
 script = ExtResource("1_ykinl")
+speed = 5.0
+chase = 5.0
 nav = NodePath("NavigationAgent3D")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=54811935]
