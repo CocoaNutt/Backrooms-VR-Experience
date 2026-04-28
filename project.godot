@@ -13,6 +13,7 @@ config_version=5
 config/name="GodotXR"
 run/main_scene="uid://dnd5ag6kvuama"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]

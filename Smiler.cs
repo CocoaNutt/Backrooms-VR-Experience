@@ -10,6 +10,7 @@ public partial class Smiler : CharacterBody3D
     public Node3D player;
     public Random rand = new Random();
     private bool inChase = false;
+    public int PursueCooldown = 0;
 
     public override void _Ready()
     {
@@ -37,16 +38,17 @@ public partial class Smiler : CharacterBody3D
     {
         //GD.Print("Process");
         base._Process(delta);
+        PursueCooldown--;
 
         if (player != null)
         {
 
             float distToPlayer = GlobalPosition.DistanceTo(player.GlobalPosition);
 
-            if (distToPlayer <= chase)
+            if (distToPlayer <= chase && PursueCooldown <= 0)
             {
                 nav.TargetPosition = player.GlobalPosition;
-                GD.Print("Pursuing player");
+                //GD.Print("Pursuing player");
             }
             else if (nav.DistanceToTarget() < 2)
             {
@@ -90,7 +92,12 @@ public partial class Smiler : CharacterBody3D
 
     public void OnAreaEntered(Area3D area)
     {
-        GD.Print("Touched someone");
+        if (area.GetParent().IsInGroup("Player"))
+        {
+            Player player = (Player)area.GetParent();
+            player.Die();
+            PursueCooldown = 600;
+        }
     }
 
     public void OnAreaExited(Area3D area)

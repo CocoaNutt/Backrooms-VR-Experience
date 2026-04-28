@@ -1,15 +1,28 @@
 [gd_scene format=3 uid="uid://olxq2oamq5h1"]
 
+[ext_resource type="Script" uid="uid://b4ml7oa4ys8i" path="res://Player.cs" id="1_fnnc4"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="1_jw5w6"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="2_rturn"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_v0u4l"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_yyaeh"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_3hom5"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_fnnc4"]
+[ext_resource type="VideoStream" uid="uid://dufw76pc830ia" path="res://textures/SmilerJumpscare.ogv" id="7_3hom5"]
 
-[node name="XROrigin3D" type="XROrigin3D" unique_id=1152329819 groups=["Player"]]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v0u4l"]
+
+[node name="XROrigin3D" type="XROrigin3D" unique_id=1152329819 node_paths=PackedStringArray("deathAnimation", "collision") groups=["Player"]]
+script = ExtResource("1_fnnc4")
+deathAnimation = NodePath("SubViewport/VideoStreamPlayer")
+collision = NodePath("Area3D")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=472064468]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01937595, 0)
+
+[node name="Viewport2Din3D" parent="XRCamera3D" unique_id=568619734 instance=ExtResource("2_yyaeh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.465621)
+transparent = 1
+scene_properties_keys = PackedStringArray()
 
 [node name="LeftHand" type="XRController3D" parent="." unique_id=1316054102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17831218, 0, 0)
@@ -30,3 +43,25 @@ tracker = &"right_hand"
 step_turn_angle = 35.0
 
 [node name="PlayerBody" parent="." unique_id=1496932216 instance=ExtResource("4_fnnc4")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1328532035]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1822380670]
+shape = SubResource("CapsuleShape3D_v0u4l")
+
+[node name="DeathCanvasLayer" type="CanvasLayer" parent="." unique_id=-1351110005]
+follow_viewport_enabled = true
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=821655383]
+size = Vector2i(1920, 1080)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport" unique_id=1810963845]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1408.0
+offset_bottom = 568.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("7_3hom5")
