@@ -3,6 +3,7 @@ using System;
 
 public partial class Player : XROrigin3D
 {
+    [Export] MeshInstance3D deathMesh;
     [Export] VideoStreamPlayer deathAnimation;
     [Export] Area3D collision;
 
@@ -10,6 +11,7 @@ public partial class Player : XROrigin3D
     {
         GD.Print("I'm dead");
         collision.CollisionLayer = 2;
+        deathMesh.Visible = true;
         deathAnimation.Visible = true;
         deathAnimation.Play();
 
@@ -17,6 +19,7 @@ public partial class Player : XROrigin3D
 
         GlobalPosition = new Vector3(-15,0,15);
         collision.CollisionLayer = 1;
+        deathMesh.Visible = false;
         deathAnimation.Visible = false;
         GD.Print("I'm alive");
     }
