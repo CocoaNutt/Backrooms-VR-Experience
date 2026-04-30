@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bp1w6fjuryqoh" path="res://jumpscare.tscn" id="3_g3ggb"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="4_3hom5"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_fnnc4"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_owk0p"]
 [ext_resource type="VideoStream" uid="uid://dufw76pc830ia" path="res://textures/SmilerJumpscare.ogv" id="7_3hom5"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_g3ggb"]
@@ -55,6 +56,10 @@ tracker = &"left_hand"
 [node name="MovementDirect" parent="LeftHand" unique_id=716530599 instance=ExtResource("2_v0u4l")]
 strafe = true
 
+[node name="FunctionPickup" parent="LeftHand" unique_id=734941091 instance=ExtResource("6_owk0p")]
+grab_distance = 2.0
+ranged_enable = false
+
 [node name="RightHand" type="XRController3D" parent="." unique_id=1039739008]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11975247, 0, 0)
 tracker = &"right_hand"
@@ -63,6 +68,10 @@ tracker = &"right_hand"
 
 [node name="MovementTurn" parent="RightHand" unique_id=999800810 instance=ExtResource("4_3hom5")]
 step_turn_angle = 35.0
+
+[node name="FunctionPickup" parent="RightHand" unique_id=1253567611 instance=ExtResource("6_owk0p")]
+grab_distance = 2.0
+ranged_enable = false
 
 [node name="PlayerBody" parent="." unique_id=1496932216 instance=ExtResource("4_fnnc4")]
 

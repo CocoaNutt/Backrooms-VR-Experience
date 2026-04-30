@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://jito03778cts"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_ddyce"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_epbju"]
+[ext_resource type="Animation" uid="uid://dgfeikrugfewi" path="res://addons/godot-xr-tools/hands/animations/left/Cup.res" id="3_4jgow"]
+[ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_scy7e"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_m1rdx"]
+[ext_resource type="Animation" uid="uid://do01jton6rk42" path="res://addons/godot-xr-tools/hands/animations/right/Cup.res" id="6_dtnws"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0qj7l"]
+size = Vector3(0.20800781, 0.2019043, 0.7857666)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpoth"]
+albedo_color = Color(0.26666668, 0.26666668, 0.26666668, 0.26666668)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nym3m"]
+material = SubResource("StandardMaterial3D_kpoth")
+size = Vector3(0.125, 0.125, 0.75)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvifi"]
+albedo_color = Color(0.26666668, 0.26666668, 0.26666668, 0.26666668)
+
+[sub_resource type="BoxMesh" id="BoxMesh_epbju"]
+material = SubResource("StandardMaterial3D_cvifi")
+size = Vector3(0.215, 0.195, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jgow"]
+albedo_color = Color(1, 1, 0.6509804, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_scy7e"]
+material = SubResource("StandardMaterial3D_4jgow")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Resource" id="Resource_tni8h"]
+script = ExtResource("4_scy7e")
+closed_pose = ExtResource("3_4jgow")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="Resource" id="Resource_pnvrw"]
+script = ExtResource("4_scy7e")
+closed_pose = ExtResource("6_dtnws")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[node name="PickableObject" unique_id=364786357 instance=ExtResource("1_ddyce")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008300781, -0.0010986328, -0.018737793)
+shape = SubResource("BoxShape3D_0qj7l")
+
+[node name="Flashlightbody" type="MeshInstance3D" parent="." index="1" unique_id=1192079849]
+mesh = SubResource("BoxMesh_nym3m")
+
+[node name="FlashlightHead" type="MeshInstance3D" parent="Flashlightbody" index="0" unique_id=1910389689]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.36063302)
+mesh = SubResource("BoxMesh_epbju")
+
+[node name="LightSource" type="MeshInstance3D" parent="." index="2" unique_id=1917314669]
+transform = Transform3D(1.575, 0, 0, 0, 1.685, 0, 0, 0, 0.65, 0, 0, -0.39228305)
+mesh = SubResource("BoxMesh_scy7e")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="LightSource" index="0" unique_id=16633867]
+light_color = Color(1, 1, 0.67058825, 1)
+light_energy = 10.0
+distance_fade_enabled = true
+spot_range = 20.0
+
+[node name="GrabPointHandLeft" parent="." index="3" unique_id=1164739088 instance=ExtResource("2_epbju")]
+transform = Transform3D(1.59, 0, 0, 0, -0.056188133, -1.848873, 0, 1.6090193, -0.064564005, -0.06, 0.127, 0.223)
+hand_pose = SubResource("Resource_tni8h")
+
+[node name="GrabPointHandRight" parent="." index="4" unique_id=1863497126 instance=ExtResource("5_m1rdx")]
+transform = Transform3D(1.59, 0, 0, 0, -0.056188133, -1.848873, 0, 1.6090193, -0.064564005, 0.057, 0.137, 0.236)
+hand_pose = SubResource("Resource_pnvrw")

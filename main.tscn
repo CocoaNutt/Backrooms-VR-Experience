@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://olxq2oamq5h1" path="res://xr_origin.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ds0fswni4jj78" path="res://BackroomsLevel1.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://qdvcyhxl8ulq" path="res://Smiler.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://jito03778cts" path="res://Flashlight.tscn" id="5_lquwl"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 
@@ -67,3 +68,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5497546, 0, -5.291176)
 
 [node name="Marker3D4" type="Marker3D" parent="PatrolPoints" unique_id=337339734 groups=["PatrolPoints"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.250788, 0, -1.8127079)
+
+[node name="PickableObject" parent="." unique_id=364786357 instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.76675075, 0, -0.64194494, 0, 1, 0, 0.64194494, 0, 0.76675075, 7.1600175, 0.6215303, -6.1862965)
