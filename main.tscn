@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://jito03778cts" path="res://Flashlight.tscn" id="5_lquwl"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
+ambient_light_source = 1
+ambient_light_energy = 0.0
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_lquwl"]
 vertices = PackedVector3Array(-18.339783, 0.75, -18.430847, -18.339783, 0.75, 18.319153, 18.660217, 0.75, 18.319153, 18.660217, 0.75, -18.430847)
@@ -70,4 +72,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5497546, 0, -5.291176)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.250788, 0, -1.8127079)
 
 [node name="PickableObject" parent="." unique_id=364786357 instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.76675075, 0, -0.64194494, 0, 1, 0, 0.64194494, 0, 0.76675075, 7.1600175, 0.6215303, -6.1862965)
+transform = Transform3D(0.76675075, 0, -0.64194494, 0, 1, 0, 0.64194494, 0, 0.76675075, -11.460532, 0.6215303, 8.92348)
