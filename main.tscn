@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ds0fswni4jj78" path="res://BackroomsLevel1.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://qdvcyhxl8ulq" path="res://Smiler.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://jito03778cts" path="res://Flashlight.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bdjohccwiwbee" path="res://DoortoFreedom.tscn" id="6_7mycd"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 ambient_light_source = 1
@@ -82,3 +83,5 @@ text = "Welcome to the backrooms!!
 Try and escape before someone
  or something finds you.
 Good luck..."
+[node name="Node3D2" parent="." unique_id=1122767422 instance=ExtResource("6_7mycd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.3863463, 0.19313997, -7.2112823)
