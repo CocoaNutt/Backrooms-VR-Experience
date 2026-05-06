@@ -28,6 +28,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 
 [node name="Smiler" parent="." unique_id=114576243 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.14343, 0.867363, 0.7184957)
+speed = 3.0
 chase = 10.0
 
 [node name="Player" parent="." unique_id=1152329819 instance=ExtResource("2_h2yge")]
@@ -73,3 +74,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.250788, 0, -1.8127079)
 
 [node name="PickableObject" parent="." unique_id=364786357 instance=ExtResource("5_lquwl")]
 transform = Transform3D(0.76675075, 0, -0.64194494, 0, 1, 0, 0.64194494, 0, 0.76675075, -11.460532, 0.6215303, 8.92348)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=767652699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.839483, 1.4041095, -3.7276464)
+text = "Welcome to the backrooms!!
+
+Try and escape before someone
+ or something finds you.
+Good luck..."

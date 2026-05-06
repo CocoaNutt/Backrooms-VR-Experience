@@ -10,7 +10,7 @@ public partial class Smiler : CharacterBody3D
     public Node3D player;
     public Random rand = new Random();
     private bool inChase = false;
-    public int PursueCooldown = 0;
+    public int PursueCooldown = 1200;
 
     public override void _Ready()
     {
