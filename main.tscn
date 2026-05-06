@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://7ncxvplvy1hl" path="res://Main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://olxq2oamq5h1" path="res://xr_origin.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://ds0fswni4jj78" path="res://BackroomsLevel1.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://qdvcyhxl8ulq" path="res://Smiler.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bjjdkab64jaxy" path="res://Backrooms.glb" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://jito03778cts" path="res://Flashlight.tscn" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://bdjohccwiwbee" path="res://DoortoFreedom.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://h7h1gblbqwqq" path="res://DoortoFreedom.tscn" id="6_7mycd"]
 
 [sub_resource type="Environment" id="Environment_h2yge"]
 ambient_light_source = 1
@@ -28,15 +28,15 @@ environment = SubResource("Environment_h2yge")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 
 [node name="Smiler" parent="." unique_id=114576243 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.14343, 0.867363, 0.7184957)
-speed = 3.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.689399, 0.867363, 1.448026)
+speed = 2.0
 chase = 10.0
 
 [node name="Player" parent="." unique_id=1152329819 instance=ExtResource("2_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.395089, 0.28385317, -0.7866249)
+transform = Transform3D(0.83867055, 0, -0.54463905, 0, 1, 0, 0.54463905, 0, 0.83867055, -8.434641, 0.28385314, 11.705146)
 
-[node name="Node3D" parent="." unique_id=1474518060 instance=ExtResource("3_h2yge")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.23773444, 0)
+[node name="Backrooms" parent="." unique_id=2050133540 instance=ExtResource("5_272bh")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.155, 0)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=2065690033]
 navigation_mesh = SubResource("NavigationMesh_lquwl")
@@ -53,7 +53,7 @@ shape = SubResource("BoxShape3D_7mycd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0596995)
 
 [node name="Marker3D2" type="Marker3D" parent="PatrolPoints" unique_id=356715177 groups=["PatrolPoints"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.291176)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7921453, 0, 9.526132)
 
 [node name="Marker3D8" type="Marker3D" parent="PatrolPoints" unique_id=394301103 groups=["PatrolPoints"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.298931, 0, 2.2125015)
@@ -65,23 +65,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9474425, 0, -9.527327)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.161313, -2.3841858e-07, 4.8077326)
 
 [node name="Marker3D7" type="Marker3D" parent="PatrolPoints" unique_id=1677662992 groups=["PatrolPoints"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.963532, -2.3841858e-07, 8.531739)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.197354, -2.3841858e-07, 8.032096)
 
 [node name="Marker3D3" type="Marker3D" parent="PatrolPoints" unique_id=594862214 groups=["PatrolPoints"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5497546, 0, -5.291176)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.929703, 0, -9.855089)
 
 [node name="Marker3D4" type="Marker3D" parent="PatrolPoints" unique_id=337339734 groups=["PatrolPoints"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.250788, 0, -1.8127079)
 
-[node name="PickableObject" parent="." unique_id=364786357 instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.76675075, 0, -0.64194494, 0, 1, 0, 0.64194494, 0, 0.76675075, -11.460532, 0.6215303, 8.92348)
+[node name="Marker3D9" type="Marker3D" parent="PatrolPoints" unique_id=133961577 groups=["PatrolPoints"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.21594, 0, -7.1681185)
 
-[node name="Label3D" type="Label3D" parent="." unique_id=767652699]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.839483, 1.4041095, -3.7276464)
+[node name="PickableObject" parent="." unique_id=364786357 instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.76675075, 0, -0.64194494, 0, 1, 0, 0.64194494, 0, 0.76675075, -7.437531, 0.6215303, 9.34001)
+
+[node name="Tutorial" type="Label3D" parent="." unique_id=767652699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.508263, 1.4041095, 7.8405128)
+billboard = 2
 text = "Welcome to the backrooms!!
 
 Try and escape before someone
  or something finds you.
 Good luck..."
-[node name="Node3D2" parent="." unique_id=1122767422 instance=ExtResource("6_7mycd")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.3863463, 0.19313997, -7.2112823)
+
+[node name="Door" parent="." unique_id=1122767422 instance=ExtResource("6_7mycd")]
+transform = Transform3D(-7.60141e-08, 0, 1.739, 0, 1.739, 0, -1.739, 0, -7.60141e-08, -1.0109632, 0.19313997, -1.3741176)

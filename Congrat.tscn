@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dmcoifx4q2lpy"]
+
+[ext_resource type="PackedScene" uid="uid://olxq2oamq5h1" path="res://xr_origin.tscn" id="1_u76ob"]
+[ext_resource type="Texture2D" uid="uid://v8jj862hkjd0" path="res://textures/GoodJob.png" id="2_cq3vr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wq0b4"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_u76ob"]
+sky_material = SubResource("ProceduralSkyMaterial_wq0b4")
+
+[sub_resource type="Environment" id="Environment_cq3vr"]
+background_mode = 2
+sky = SubResource("Sky_u76ob")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wq0b4"]
+albedo_color = Color(1.1070073e-06, 0.65373665, 0.4556685, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_u76ob"]
+material = SubResource("StandardMaterial3D_wq0b4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u76ob"]
+size = Vector3(11.128662, 0.5722656, 11.103516)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cq3vr"]
+size = Vector3(1, 6.6401367, 11.875305)
+
+[node name="Node3D" type="Node3D" unique_id=1461274078]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1665019394]
+environment = SubResource("Environment_cq3vr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1527613260]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=153920268]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1922431317]
+transform = Transform3D(5.56, 0, 0, 0, 5.56, 0, 0, 0, 5.56, 0, 0, 0)
+mesh = SubResource("PlaneMesh_u76ob")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=852838835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006225586, -0.21386719, 0.017578125)
+shape = SubResource("BoxShape3D_u76ob")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=884193544]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.406277, 2.8200684, 0.009735107)
+shape = SubResource("BoxShape3D_cq3vr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=779008958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.345197, 2.8200684, 0.009735107)
+shape = SubResource("BoxShape3D_cq3vr")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=1883349015]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.16808796, 2.8200684, -5.6592917)
+shape = SubResource("BoxShape3D_cq3vr")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" unique_id=557260731]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.16808796, 2.8200684, 5.535591)
+shape = SubResource("BoxShape3D_cq3vr")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1894575340]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6527604, 0.9785813, -1.2565719)
+billboard = 2
+text = "Good Job!"
+
+[node name="XROrigin3D" parent="." unique_id=1152329819 instance=ExtResource("1_u76ob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15066433, 5.9604645e-08, 0.51186275)
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=511456950]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1927115, 1.299473, -1.6354504)
+billboard = 2
+texture = ExtResource("2_cq3vr")

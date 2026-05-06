@@ -17,7 +17,7 @@ public partial class Player : XROrigin3D
 
         await ToSignal(GetTree().CreateTimer(6.0f), "timeout");
 
-        GlobalPosition = new Vector3(-15,0,15);
+        GlobalPosition = new Vector3(-8.43f,0.284f,11.70f);
         collision.CollisionLayer = 1;
         deathMesh.Visible = false;
         deathAnimation.Visible = false;

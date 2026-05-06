@@ -7,8 +7,6 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_7o0n5"]
 radius = 1.3969125
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wwoot"]
-
 [node name="Node3D" type="CharacterBody3D" unique_id=114576243 node_paths=PackedStringArray("nav")]
 script = ExtResource("1_ykinl")
 speed = 5.0
@@ -25,15 +23,12 @@ texture = ExtResource("1_55sus")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillRange" unique_id=1174070479]
 shape = SubResource("SphereShape3D_7o0n5")
 
-[node name="Body" type="CollisionShape3D" parent="." unique_id=1930217508]
-shape = SubResource("CapsuleShape3D_wwoot")
-
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1160897659]
 
 [node name="Droning" type="AudioStreamPlayer3D" parent="." unique_id=1748069052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55730546, 0)
 stream = ExtResource("3_7o0n5")
-volume_db = 10.0
+volume_db = 4.0
 autoplay = true
 doppler_tracking = 2
 
