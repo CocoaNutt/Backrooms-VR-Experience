@@ -33,7 +33,7 @@ speed = 2.0
 chase = 10.0
 
 [node name="Player" parent="." unique_id=1152329819 instance=ExtResource("2_h2yge")]
-transform = Transform3D(0.83867055, 0, -0.54463905, 0, 1, 0, 0.54463905, 0, 0.83867055, -8.434641, 0.28385314, 11.705146)
+transform = Transform3D(0.83867055, 0, -0.54463905, 0, 1, 0, 0.54463905, 0, 0.83867055, -8.435, 1.5, 11.705)
 
 [node name="Backrooms" parent="." unique_id=2050133540 instance=ExtResource("5_272bh")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0.155, 0)
